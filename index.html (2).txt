@@ -1,0 +1,506 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="J C Telecomunicações LTDA. Soluções em telecomunicações, conectividade e tecnologia no Rio de Janeiro.">
+    <title>J C Telecomunicações | Conectando Você</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --azul: #071b45;
+            --azul-claro: #087cff;
+            --ciano: #00e5ff;
+            --branco: #ffffff;
+            --cinza: #f3f7fc;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--branco);
+            color: #17233d;
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--azul);
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--ciano);
+        }
+
+        nav {
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--ciano);
+        }
+
+        .hero {
+            min-height: 570px;
+            padding: 100px 8%;
+            display: flex;
+            align-items: center;
+            background:
+                radial-gradient(circle at 85% 40%, #087cff55, transparent 35%),
+                linear-gradient(120deg, #06122e, #0a3472 65%, #087cff);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 760px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tag {
+            display: inline-block;
+            border: 1px solid var(--ciano);
+            color: var(--ciano);
+            border-radius: 30px;
+            padding: 7px 17px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 22px;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 68px);
+            line-height: 1.08;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span {
+            color: var(--ciano);
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 620px;
+            color: #e0ebff;
+            margin-bottom: 32px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 27px;
+            border-radius: 8px;
+            background: var(--ciano);
+            color: #061936;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
+            margin: 5px 8px 5px 0;
+        }
+
+        .btn:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+            background: transparent;
+        }
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            color: var(--azul);
+            font-size: clamp(28px, 4vw, 40px);
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: #65718a;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .about {
+            background: var(--cinza);
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 17px;
+            margin-bottom: 18px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            padding: 32px 25px;
+            background: white;
+            border-radius: 14px;
+            box-shadow: 0 8px 30px #071b4510;
+            border-bottom: 4px solid var(--azul-claro);
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 14px 35px #087cff20;
+        }
+
+        .service-icon {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            color: var(--azul);
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        .service-card p {
+            color: #65718a;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #087cff, #071b45);
+            color: white;
+            text-align: center;
+        }
+
+        .highlight h2 {
+            font-size: clamp(28px, 4vw, 42px);
+            margin-bottom: 15px;
+        }
+
+        .highlight p {
+            max-width: 700px;
+            margin: 0 auto 25px;
+            color: #e0ebff;
+            font-size: 17px;
+        }
+
+        .contact {
+            background: var(--cinza);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 22px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .contact-card {
+            background: white;
+            border-radius: 12px;
+            padding: 28px 22px;
+            text-align: center;
+            box-shadow: 0 5px 20px #071b450b;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-card .service-icon {
+            font-size: 32px;
+        }
+
+        .contact-card h3 {
+            color: var(--azul);
+            margin-bottom: 10px;
+        }
+
+        .contact-card a {
+            color: #087cff;
+            text-decoration: none;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #04112b;
+            color: #d7e2f5;
+            text-align: center;
+            padding: 30px 8%;
+        }
+
+        footer p {
+            margin: 6px 0;
+            font-size: 14px;
+        }
+
+        footer strong {
+            color: var(--ciano);
+        }
+
+        @media (max-width: 650px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 14px;
+            }
+
+            .hero {
+                min-height: 500px;
+                padding: 75px 7%;
+            }
+
+            section {
+                padding: 60px 7%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="#inicio" class="logo"
+           style="color:white;text-decoration:none;">
+            J C <span>TELECOM</span>
+        </a>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#empresa">Empresa</a>
+            <a href="#servicos">Soluções</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <div class="hero-content">
+                <span class="tag">TECNOLOGIA • CONECTIVIDADE • INOVAÇÃO</span>
+
+                <h1>
+                    Conectando pessoas.<br>
+                    <span>Aproximando o futuro.</span>
+                </h1>
+
+                <p>
+                    A J C Telecomunicações LTDA é uma empresa que
+                    acredita na importância da comunicação e da tecnologia
+                    para aproximar pessoas, conectar negócios e criar novas
+                    possibilidades.
+                </p>
+
+                <a href="#contato" class="btn">Entre em contato →</a>
+                <a href="#empresa" class="btn btn-outline">Conheça a empresa</a>
+            </div>
+        </section>
+
+        <section class="about" id="empresa">
+            <div class="section-title">
+                <h2>Conheça a J C Telecomunicações</h2>
+                <p>
+                    Compromisso, comunicação e tecnologia em um só lugar.
+                </p>
+            </div>
+
+            <div class="about-content">
+                <p>
+                    A <strong>J C Telecomunicações LTDA</strong> está
+                    localizada em Bento Ribeiro, Rio de Janeiro – RJ.
+                    Nosso objetivo é contribuir para um mundo cada vez
+                    mais conectado, valorizando a comunicação e as
+                    oportunidades proporcionadas pela tecnologia.
+                </p>
+
+                <p>
+                    Trabalhamos para construir relacionamentos profissionais
+                    baseados na confiança, na responsabilidade e na busca
+                    constante por soluções que atendam às necessidades
+                    dos nossos clientes e parceiros.
+                </p>
+
+                <p>
+                    <strong>J C Telecomunicações:</strong> conectando
+                    possibilidades e aproximando o futuro.
+                </p>
+            </div>
+        </section>
+
+        <section id="servicos">
+            <div class="section-title">
+                <h2>Nossos Diferenciais</h2>
+                <p>
+                    Uma apresentação da nossa proposta de valor e do nosso
+                    compromisso com a comunicação.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <article class="service-card">
+                    <div class="service-icon">📡</div>
+                    <h3>Telecomunicações</h3>
+                    <p>
+                        Foco em comunicação, conectividade e nas possibilidades
+                        que aproximam pessoas e empresas.
+                    </p>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon">💡</div>
+                    <h3>Tecnologia e Inovação</h3>
+                    <p>
+                        Valorizamos a evolução tecnológica e a busca por
+                        alternativas que acompanhem um mundo conectado.
+                    </p>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon">🤝</div>
+                    <h3>Relacionamento</h3>
+                    <p>
+                        Acreditamos na construção de parcerias duradouras,
+                        com responsabilidade e confiança.
+                    </p>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon">🌐</div>
+                    <h3>Conectividade</h3>
+                    <p>
+                        A comunicação como ponte para novas oportunidades,
+                        negócios e conexões.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="highlight">
+            <h2>Vamos nos conectar?</h2>
+            <p>
+                Entre em contato com a J C Telecomunicações LTDA para
+                conhecer melhor a empresa e conversar sobre suas necessidades.
+            </p>
+            <a href="tel:+552125813950" class="btn">
+                ☎ Ligar para a empresa
+            </a>
+            <a href="mailto:cafisc@globo.com" class="btn btn-outline">
+                ✉ Enviar e-mail
+            </a>
+        </section>
+
+        <section class="contact" id="contato">
+            <div class="section-title">
+                <h2>Fale Conosco</h2>
+                <p>
+                    Estamos à disposição para receber seu contato.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="service-icon">📍</div>
+                    <h3>Nosso Endereço</h3>
+                    <p>
+                        Rua Sapopemba, 00601<br>
+                        Bento Ribeiro<br>
+                        Rio de Janeiro – RJ<br>
+                        CEP 21331-240
+                    </p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="service-icon">📞</div>
+                    <h3>Telefone</h3>
+                    <p>
+                        <a href="tel:+552125813950">
+                            (21) 2581-3950
+                        </a>
+                    </p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="service-icon">✉️</div>
+                    <h3>E-mail</h3>
+                    <p>
+                        <a href="mailto:cafisc@globo.com">
+                            cafisc@globo.com
+                        </a>
+                    </p>
+                </div>
+
+                <div class="contact-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Dados da Empresa</h3>
+                    <p>
+                        <strong>J C Telecomunicações LTDA</strong><br>
+                        CNPJ: 00.062.805/0001-60
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><strong>J C TELECOMUNICAÇÕES LTDA</strong></p>
+        <p>Conectando pessoas e aproximando o futuro.</p>
+        <p>Rio de Janeiro – RJ | CEP 21331-240</p>
+        <p>© <span id="ano"></span> J C Telecomunicações LTDA.
+           Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById("ano").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>
